@@ -15,3 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/addreclamation','ReclamationController@addReclamation');
+Route::get('/reclamations','ReclamationController@getReclamations');
+Route::get('/select_reclamation/{id}','ReclamationController@getReclamation');
+Route::post('/editreclamation/','ReclamationController@updateReclamation');
+Route::get('/delete_reclamation/{id}','ReclamationController@deleteReclamation');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/auth','HomeController@authenticate');
